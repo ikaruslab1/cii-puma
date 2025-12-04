@@ -1,0 +1,29 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, type ui } from "../../i18n/ui"; // Ajusta la ruta según tu estructura
+
+// 1. Obtener el idioma actual de la URL
+const currentLang = Astro.currentLocale || "es";
+const t = useTranslations(ui);
+---
+
+<li>
+  <a href={getRelativeLocaleUrl(currentLang, "")}>
+    {t("nav.home")}
+  </a>
+</li>
+<li>
+  <a href={getRelativeLocaleUrl(currentLang, "programa")}>
+    {t("nav.program")}
+  </a>
+</li>
+<li>
+  <a href={getRelativeLocaleUrl(currentLang, "registro")}>
+    {t("nav.register")}
+  </a>
+</li>
+<li>
+  <a href={getRelativeLocaleUrl(currentLang, "comite")}>
+    {t("nav.comite")}
+  </a>
+</li>

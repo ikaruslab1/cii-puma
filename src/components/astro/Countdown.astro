@@ -1,0 +1,90 @@
+---
+const fechas = {
+  en: {
+    dias: "Days",
+    horas: "Hours",
+    minutos: "Minutes",
+  },
+  es: {
+    dias: "Días",
+    horas: "Horas",
+    minutos: "Minutos",
+  },
+};
+
+const lang = Astro.props.lang;
+---
+
+<div
+  id="countdown"
+  class="flex justify-center items-center text-azul mt-12"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-delay="700"
+>
+  <div
+    class="flex flex-col items-center bg-[rgba(255,255,255,0.1)] backdrop-blur-[2px] p-4 shadow-lg min-w-[100px] md:min-w-[140px]"
+  >
+    <span class="text-xs md:text-sm uppercase tracking-widest mt-1"
+      >{lang === "es" ? fechas.es.dias : fechas.en.dias}</span
+    >
+    <span id="days" class="text-4xl md:text-6xl font-bold font-mono"
+      ><span class="text-red-500">0</span>00</span
+    >
+  </div>
+
+  <div
+    class="flex flex-col items-center bg-[rgba(255,255,255,0.1)] backdrop-blur-[2px] p-4 shadow-lg min-w-[100px] md:min-w-[140px]"
+  >
+    <span class="text-xs md:text-sm uppercase tracking-widest mt-1"
+      >{lang === "es" ? fechas.es.horas : fechas.en.horas}</span
+    >
+    <span id="hours" class="text-4xl md:text-6xl font-bold font-mono">00</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center bg-[rgba(255,255,255,0.1)] backdrop-blur-[2px] p-4 shadow-lg min-w-[100px] md:min-w-[140px]"
+  >
+    <span class="text-xs md:text-sm uppercase tracking-widest mt-1"
+      >{lang === "es" ? fechas.es.minutos : fechas.en.minutos}</span
+    >
+    <span id="minutes" class="text-4xl md:text-6xl font-bold font-mono">00</span
+    >
+  </div>
+</div>
+
+<script>
+  function updateCountdown() {
+    const targetDate = new Date("2026-03-23T00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const countdownElement = document.getElementById("countdown");
+
+    if (!daysElement || !hoursElement || !minutesElement || !countdownElement)
+      return;
+
+    if (distance < 0) {
+      countdownElement.innerHTML =
+        "<div class='text-2xl font-bold'>¡El evento ha comenzado!</div>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    daysElement.innerText = days.toString().padStart(3, "0");
+    hoursElement.innerText = hours.toString().padStart(2, "0");
+    minutesElement.innerText = minutes.toString().padStart(2, "0");
+  }
+
+  // Update immediately and then every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>

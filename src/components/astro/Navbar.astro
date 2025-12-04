@@ -1,0 +1,175 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, type ui } from "../../i18n/ui";
+
+const currentLang = Astro.currentLocale || "es";
+
+const t = useTranslations(currentLang as keyof typeof ui);
+
+const targetLang = currentLang === "es" ? "en" : "es";
+const currentPath = Astro.url.pathname.replace(`/${currentLang}`, "") || "/";
+const translatedPath = getRelativeLocaleUrl(targetLang, currentPath);
+---
+
+<div
+  id="navbar-wrapper"
+  class="fixed top-0 left-0 right-0 z-50 mx-16 my-6 transition-transform duration-300 ease-in-out"
+>
+  <nav
+    class="navbar flex justify-center w-full items-center justify-between gap-2 shadow-slate-900/10 shadow-lg border-b-4 border-oro bg-[rgba(255,255,255,0.5)] backdrop-blur-lg"
+  >
+    <div class="navbar-start max-md:w-1/4">
+      <a
+        class="link text-base-content link-oro text-xl font-bold no-underline pr-2"
+        href="#"
+      >
+        <img
+          src="https://nyc.cloud.appwrite.io/v1/storage/buckets/6930504d0026f8982f8e/files/693053fb0002cb0492dd/view?project=69304e09002505d69656&mode=admin"
+          alt="UNAM"
+          class="w-10"
+        />
+      </a>
+      <a
+        class="link text-base-content link-oro text-xl font-bold no-underline"
+        href="#"
+      >
+        <img
+          src="https://nyc.cloud.appwrite.io/v1/storage/buckets/6930504d0026f8982f8e/files/693053eb003b5848fa97/view?project=69304e09002505d69656&mode=admin"
+          alt="FESA"
+          class="w-10"
+        />
+      </a>
+    </div>
+    <div class="navbar-center max-md:hidden">
+      <ul class="menu menu-horizontal p-0 font-medium">
+        <li>
+          <a href={getRelativeLocaleUrl(currentLang, "")} class="dropdown-item">
+            {t("nav.home")}
+          </a>
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(currentLang, "programa")}
+            class="dropdown-item"
+          >
+            {t("nav.program")}
+          </a>
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(currentLang, "registro")}
+            class="dropdown-item"
+          >
+            {t("nav.register")}
+          </a>
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(currentLang, "comite")}
+            class="dropdown-item"
+          >
+            {t("nav.comite")}
+          </a>
+        </li>
+        <li>
+          <a
+            href={translatedPath}
+            class="bg-oro/20 hover:bg-oro/40 hover:text-gray-800 transition-colors duration-300 ease-in-out"
+          >
+            <span class="icon-[material-symbols--translate] size-5"></span>
+            {currentLang === "es" ? "🇺🇸 EN" : "🇲🇽 ES"}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-end items-center gap-4">
+      <div class="dropdown relative inline-flex md:hidden">
+        <button
+          id="dropdown-default"
+          type="button"
+          class="dropdown-toggle btn btn-text btn-secondary btn-square"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-label="Dropdown"
+        >
+          <span class="icon-[tabler--menu-2] dropdown-open:hidden size-5"
+          ></span>
+          <span class="icon-[tabler--x] dropdown-open:block hidden size-5"
+          ></span>
+        </button>
+        <ul
+          class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="dropdown-default"
+        >
+          <li>
+            <a
+              href={getRelativeLocaleUrl(currentLang, "")}
+              class="dropdown-item"
+            >
+              {t("nav.home")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getRelativeLocaleUrl(currentLang, "programa")}
+              class="dropdown-item"
+            >
+              {t("nav.program")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getRelativeLocaleUrl(currentLang, "registro")}
+              class="dropdown-item"
+            >
+              {t("nav.register")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getRelativeLocaleUrl(currentLang, "comite")}
+              class="dropdown-item"
+            >
+              {t("nav.comite")}
+            </a>
+          </li>
+          <li>
+            <a
+              href={translatedPath}
+              class="bg-oro/20 hover:bg-oro/40 hover:text-gray-800 transition-colors duration-300 ease-in-out dropdown-item"
+            >
+              <span class="icon-[material-symbols--translate] size-5"></span>
+              {currentLang === "es" ? "🇺🇸 EN" : "🇲🇽 ES"}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a class="btn max-md:btn-square bg-azul text-white" href="#">
+      <span class="max-md:hidden"
+        >{currentLang === "es" ? "Pre-Registro" : "Pre-Registration"}</span
+      >
+      <span class="icon-[tabler--arrow-right] rtl:rotate-180"></span>
+    </a>
+  </nav>
+</div>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("navbar-wrapper");
+
+  window.addEventListener("scroll", () => {
+    if (!navbar) return;
+
+    if (Math.abs(window.scrollY - lastScrollY) < 10) return;
+
+    if (window.scrollY > lastScrollY && window.scrollY > 5) {
+      navbar.classList.add("-translate-y-[200%]");
+    } else {
+      navbar.classList.remove("-translate-y-[200%]");
+    }
+    lastScrollY = window.scrollY;
+  });
+</script>

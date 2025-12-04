@@ -1,0 +1,198 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../layouts/Header.astro";
+import Claro from "../components/astro/botones/Claro.astro";
+
+const title = "Registro";
+---
+
+<BaseLayout title={title}>
+  <Header color="f6f6f6" height="75vh">
+    <h1
+      class="text-center font-bold uppercase text-azul text-6xl md:text-7xl lg:text-9xl pb-6"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      Programa
+    </h1>
+    <div
+      class="flex justify-center pb-4"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      <hr class="w-1/2 border-oro border-2" />
+    </div>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="400"
+      class="flex gap-4 w-full justify-center pt-4"
+    >
+      <Claro texto="Descargar programa" href="#" />
+    </div>
+  </Header>
+  <section class="my-16 px-4">
+    <nav
+      class="tabs space-x-1 overflow-x-auto"
+      aria-label="Tabs"
+      role="tablist"
+      aria-orientation="horizontal"
+    >
+      <button
+        type="button"
+        class="grow btn btn-text active-tab:bg-azul active-tab:text-white hover:text-azul active hover:bg-oro/20"
+        id="tabs-fill-item-1"
+        data-tab="#tabs-fill-1"
+        aria-controls="tabs-fill-1"
+        role="tab"
+        aria-selected="false"
+      >
+        Lunes 27
+      </button>
+      <button
+        type="button"
+        class="grow btn btn-text active-tab:bg-azul active-tab:text-white hover:text-azul hover:bg-oro/20"
+        id="tabs-fill-item-2"
+        data-tab="#tabs-fill-2"
+        aria-controls="tabs-fill-2"
+        role="tab"
+        aria-selected="false"
+      >
+        Martes 28
+      </button>
+      <button
+        type="button"
+        class="grow btn btn-text active-tab:bg-azul active-tab:text-white hover:text-azul hover:bg-oro/20"
+        id="tabs-fill-item-3"
+        data-tab="#tabs-fill-3"
+        aria-controls="tabs-fill-3"
+        role="tab"
+        aria-selected="false"
+      >
+        Miércoles 29
+      </button>
+      <button
+        type="button"
+        class="grow btn btn-text active-tab:bg-azul active-tab:text-white hover:text-azul hover:bg-oro/20"
+        id="tabs-fill-item-4"
+        data-tab="#tabs-fill-4"
+        aria-controls="tabs-fill-4"
+        role="tab"
+        aria-selected="false"
+      >
+        Jueves 30
+      </button>
+    </nav>
+
+    <div class="mt-16">
+      <div id="tabs-fill-1" role="tabpanel" aria-labelledby="tabs-fill-item-1">
+        <div class="grid grid-cols-2 px-64">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="col-span-2 border border-slate-200 p-4"
+          >
+            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
+              10:00 Hrs
+            </p>
+            <p class="text-2xl tex-slate-500 font-bold py-2">
+              Inauguración Congreso
+            </p>
+            <div class="border-l-4 border-oro pl-4">
+              <p class="flex items-center gap-1">
+                <span class="icon-[ic--baseline-place] size-5 text-slate-500"
+                ></span> Explanada principal
+              </p>
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="col-span-2 border border-slate-200 p-2"
+          >
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="col-span-2 border border-slate-200 p-4"
+          >
+            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
+              10:00 - 13:00 Hrs
+            </p>
+            <p class="text-2xl tex-slate-500 font-bold py-2">
+              Tema: SNII y pueblos originarios
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="col-span-2 border border-slate-200 p-2"
+          >
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="border border-slate-200 p-4"
+          >
+            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
+              10:15 - 13:00 Hrs
+            </p>
+            <p class="text-2xl tex-slate-500 font-bold py-2">
+              "Conferencia Magistral SNII eméritos Unidad de Congresos"
+            </p>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="border border-slate-200 p-4"
+          >
+            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
+              11:00 - 13:00 Hrs
+            </p>
+            <p class="text-2xl tex-slate-500 font-bold py-2">
+              "Literatura electrónica latinoamericana: campos de construcción y
+              aproximaciones metodológicas" <span class="text-oro">
+                - Presencial</span
+              >
+            </p>
+            <div class="divider pt-2 pb-4"></div>
+            <div class="border-l-4 border-oro pl-4">
+              <p class="font-bold flex items-center gap-1">
+                <span
+                  class="icon-[material-symbols--person] size-5 text-slate-500"
+                ></span> Dra. Nohelia Meza, Dr. Rodolfo Mata Sandoval
+              </p>
+              <p class="flex items-center gap-1">
+                <span class="icon-[ic--baseline-place] size-5 text-slate-500"
+                ></span> Sala de Videoconferencias
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabs-fill-2"
+        class="hidden"
+        role="tabpanel"
+        aria-labelledby="tabs-fill-item-2"
+      >
+      </div>
+      <div
+        id="tabs-fill-3"
+        class="hidden"
+        role="tabpanel"
+        aria-labelledby="tabs-fill-item-3"
+      >
+      </div>
+      <div
+        id="tabs-fill-4"
+        class="hidden"
+        role="tabpanel"
+        aria-labelledby="tabs-fill-item-4"
+      >
+      </div>
+    </div>
+  </section>
+</BaseLayout>

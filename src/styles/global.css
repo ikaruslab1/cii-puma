@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "flyonui" {
+   themes: light --default
+}
+@import "flyonui/variants.css";
+@source "../../node_modules/flyonui/flyonui.js";
+@import "../../node_modules/flyonui/variants.css";
+@source "../../node_modules/flyonui/dist/index.js";
+@plugin "@iconify/tailwind4";
+@source "./node_modules/flyonui/dist/accordion.js"; 
+
+@theme {
+  --color-oro: #D59F0F;
+  --color-azul: #003D79;
+  --color-azul-claro: #162456;
+  --color-azul-oscuro: #010c10;
+}

@@ -1,43 +1,59 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Claro from "../components/astro/botones/Claro.astro";
-import Opaco from "../components/astro/botones/Opaco.astro";
-import BandaLogos from "../components/react/BandaLogos.jsx";
-import CajaContenido from "../layouts/CajaContenido.astro";
-import Countdown from "../components/astro/Countdown.astro";
-import Header from "../layouts/Header.astro";
+import PixelBlast from "../../components/react/PixelBlast.jsx";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Claro from "../../components/astro/botones/Claro.astro";
+import Opaco from "../../components/astro/botones/Opaco.astro";
+import BandaLogos from "../../components/react/BandaLogos.jsx";
+import CajaContenido from "../../layouts/CajaContenido.astro";
+import Countdown from "../../components/astro/Countdown.astro";
 
 const title = "Inicio";
 ---
 
 <BaseLayout title={title}>
-  <Header color="eff6ff" height="100vh">
-    <Countdown lang={"es"} />
-    <h1
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      class="text-center text-xl md:text-3xl xl:text-4xl font-bold text-white bg-azul py-4"
-    >
-      1<sup>er</sup> Congreso Internacional de Investigación:
-    </h1>
-    <h3
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-delay="300"
-      class="text-center text-3xl md:text-5xl xl:text-7xl font-bold text-balance text-azul drop-shadow-lg drop-shadow-white"
-    >
-      Perspectivas Universitarias desde la Multidisciplina y la Aplicación
-    </h3>
+  <div class="w-full h-screen relative -mt-10">
+    <PixelBlast
+      variant="square"
+      pixelSize={6}
+      color="#eff6ff"
+      patternScale={3}
+      patternDensity={1}
+      pixelSizeJitter={0}
+      speed={0.8}
+      edgeFade={0.25}
+      transparent
+      client:load
+    />
     <div
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-delay="400"
-      class="flex gap-4 w-full justify-center pt-12"
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto w-[99vw] px-4 md:px-32 xl:px-64"
     >
-      <Claro texto="Convocatoria" href="#" />
-      <Opaco texto="Pre - Registro" href="#" />
+      <Countdown lang={"en"} />
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="text-center text-xl md:text-3xl xl:text-4xl font-bold text-white bg-azul py-4"
+      >
+        1<sup>st</sup> International Research Congress:
+      </h1>
+      <h3
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="300"
+        class="text-center text-3xl md:text-5xl xl:text-7xl font-bold text-balance text-azul drop-shadow-lg drop-shadow-white"
+      >
+        University Perspectives from Multidisciplinarity and Application
+      </h3>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="400"
+        class="flex gap-4 w-full justify-center pt-12"
+      >
+        <Claro texto="Call for Papers" href="#" />
+        <Opaco texto="Pre - Registration" href="#" />
+      </div>
     </div>
-  </Header>
+  </div>
   <div data-aos="fade-up" data-aos-duration="1000">
     <BandaLogos client:load />
   </div>
@@ -62,23 +78,23 @@ const title = "Inicio";
       </div>
       <div>
         <p data-aos="fade-up" data-aos-duration="1000">
-          La Facultad de Estudios Superiores Acatlán tiene el gusto de presentar
-          el <strong>CII-PUMA</strong>, un espacio acogedor que cobra vida para
-          compartir ideas, escucharnos, y construir puentes entre distintas
-          voces. Durante cuatro días especiales, nos encontraremos con personas
-          comprometidas con el saber, la docencia, la investigación y el cambio:
-          líderes, profesoras, profesores, estudiantes y representantes de
-          diversos sectores. Será un momento para imaginar juntas y juntos
-          respuestas a los desafíos de nuestro tiempo, desde una mirada crítica,
-          generosa y propositiva. Con una perspectiva multidisciplinaria e
-          incluyente, este encuentro se organizará en torno a cinco ejes
-          estratégicos que invitan al diálogo y la acción.
+          The Faculty of Higher Studies Acatlán (FES Acatlán) is pleased to
+          present the <strong>CII-PUMA</strong>, a welcoming space that comes to
+          life to share ideas, listen to one another, and build bridges between
+          diverse voices. For four special days, we will meet with people
+          committed to knowledge, teaching, research, and change: leaders,
+          professors, students, and representatives from various sectors. It
+          will be a time to imagine together responses to the challenges of our
+          time, from a critical, generous, and proactive perspective. With a
+          multidisciplinary and inclusive approach, this gathering will be
+          organized around five strategic axes that encourage dialogue and
+          action.
         </p>
         <br />
         <p data-aos="fade-up" data-aos-duration="1000">
-          Con este evento, la FES Acatlán busca conectar el pensamiento
-          académico con las necesidades reales de nuestra sociedad, impulsando
-          soluciones desde la comunidad universitaria hacia el mundo.
+          With this event, FES Acatlán seeks to connect academic thought with
+          the real needs of our society, promoting solutions from the university
+          community to the world.
         </p>
       </div>
     </div>
@@ -96,28 +112,28 @@ const title = "Inicio";
           data-aos-duration="1000"
           class="border-l-5 border-oro pl-4"
         >
-          <h3 class="text-5xl font-bold">DISEÑANDO EL MAÑANA</h3>
+          <h3 class="text-5xl font-bold">DESIGNING TOMORROW</h3>
           <p class="text-2xl text-slate-600">
-            Tecnología, Justicia y Sostenibilidad
+            Technology, Justice and Sustainability
           </p>
         </div>
         <br />
         <br />
         <p data-aos="fade-up" data-aos-duration="1000" class="text-lg">
-          Durante esta jornada dinámica y significativa, compartiremos charlas
-          inspiradoras y sesiones en paralelo con personas expertas en cada uno
-          de los ejes temáticos. También contaremos con espacios diseñados para
-          abrir conversaciones, explorar ideas recientes y dialogar de manera
-          abierta y colaborativa. Este encuentro será una excelente ocasión para
-          tejer conexiones reales entre quienes vienen del mundo académico, de
-          instituciones públicas, del sector productivo y de la sociedad civil.
+          During this dynamic and meaningful day, we will share inspiring talks
+          and parallel sessions with experts in each of the thematic areas. We
+          will also have spaces designed to open conversations, explore recent
+          ideas, and engage in open and collaborative dialogue. This meeting
+          will be an excellent opportunity to forge real connections among those
+          from academia, public institutions, the productive sector, and civil
+          society.
         </p>
         <br />
         <p data-aos="fade-up" data-aos-duration="1000" class="text-lg">
-          Los temas que guían esta conferencia tocan problemáticas que ya
-          vivimos en lo cotidiano, y nos invitan a imaginar, desde distintas
-          perspectivas, cómo construir un futuro más justo, habitable y
-          solidario para todas y todos.
+          The themes guiding this conference touch on problems that we already
+          experience in our daily lives, and invite us to imagine, from
+          different perspectives, how to build a fairer, more livable and more
+          supportive future for everyone.
         </p>
       </div></CajaContenido
     >
@@ -136,20 +152,18 @@ const title = "Inicio";
               >
                 <span class="icon-[mingcute--ai-fill] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
-                  Inteligencia Artificial (IA) y Tecnologías Emergentes (TE)
+                  Artificial Intelligence (AI) and Emerging Technologies (ET)
                 </h4><br />
                 <p class="text-lg text-balance">
-                  La inteligencia artificial y otras tecnologías emergentes ya
-                  están cambiando nuestra vida cotidiana: la manera en que
-                  aprendemos y trabajamos, hasta cómo se toman decisiones en la
-                  salud, la justicia y muchos otros ámbitos clave evolucionan
-                  constantemente. Este eje invita a explorar el enorme potencial
-                  de AI y de las TE para mejorar procesos y resolver problemas
-                  complejos, también los dilemas éticos y sociales que surgen
-                  cuando los algoritmos comienzan a influir en decisiones
-                  humanas. Reflexionaremos sobre cómo aprovechar estas
-                  herramientas de forma responsable, creativa y con sentido
-                  humano.
+                  Artificial intelligence and other emerging technologies are
+                  already changing our daily lives: the way we learn and work,
+                  even how decisions are made in healthcare, justice, and many
+                  other key areas are constantly evolving. This theme invites us
+                  to explore the enormous potential of AI and ET to improve
+                  processes and solve complex problems, as well as the ethical
+                  and social dilemmas that arise when algorithms begin to
+                  influence human decisions. We will reflect on how to leverage
+                  these tools responsibly, creatively, and with a human touch.
                 </p>
               </div>
             </div>

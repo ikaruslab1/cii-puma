@@ -9,6 +9,26 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.3"
+    "@astrojs/react": "^4.4.2",
+    "@gsap/react": "^2.1.2",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "aos": "^2.3.4",
+    "astro": "^5.16.3",
+    "astro-relative-links": "^0.4.2",
+    "flyonui": "^2.4.1",
+    "gsap": "^3.13.0",
+    "motion": "^12.23.12",
+    "postprocessing": "^6.38.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
+    "tailwindcss": "^4.1.17",
+    "three": "^0.167.1"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.413",
+    "@iconify/tailwind4": "^1.2.0"
   }
 }

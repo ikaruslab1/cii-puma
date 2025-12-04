@@ -1,0 +1,24 @@
+---
+import PixelBlast from "../components/react/PixelBlast.jsx";
+const { color, height } = Astro.props;
+---
+
+<div class="w-full relative -mt-10" style={`height: ${height}`}>
+  <PixelBlast
+    variant="square"
+    pixelSize={6}
+    color={`#${color}`}
+    patternScale={3}
+    patternDensity={1}
+    pixelSizeJitter={0}
+    speed={0.8}
+    edgeFade={0.25}
+    transparent
+    client:load
+  />
+  <div
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto w-[99vw] px-4 md:px-32 xl:px-64"
+  >
+    <slot />
+  </div>
+</div>

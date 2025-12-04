@@ -1,0 +1,52 @@
+---
+const currentLang = Astro.currentLocale || "es";
+const targetLang = currentLang === "es" ? "en" : "es";
+---
+
+<footer class="footer footer-center bg-slate-100 rounded-sm p-6">
+  <div
+    class="skeleton-striped h-32 w-32 border-base-content/20 rounded-box border bg-amber-600"
+  >
+  </div>
+  <nav>
+    <div class="flex gap-4">
+      <a href="#" class="link link-animated" aria-label="Facebook Link">
+        <span class="icon-[tabler--brand-facebook] size-6"></span>
+      </a>
+      <a href="#" class="link link-animated" aria-label="X Link">
+        <span class="icon-[tabler--brand-x] size-6"></span>
+      </a>
+      <a href="#" class="link link-animated" aria-label="Linkedin Link">
+        <span class="icon-[tabler--brand-linkedin] size-6"></span>
+      </a>
+    </div>
+  </nav>
+  <aside>
+    <p>
+      {
+        currentLang === "es"
+          ? "Hecho en México, todos los derechos reservados 2026."
+          : "Made in Mexico, all rights reserved 2026."
+      }
+      <br />{
+        currentLang === "es"
+          ? "Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente "
+          : "This page may be reproduced for non-profit purposes, provided it is not altered,"
+      }
+
+      <br />{
+        currentLang === "es"
+          ? "completa y su dirección electrónica. De otra forma, requiere permiso previo por escrito de la institución."
+          : "the complete source and its web address are cited. Otherwise, prior written permission from the institution is required."
+      }
+    </p>
+    <p class="pb-16">
+      {
+        currentLang === "es"
+          ? "Sitio web administrado por: Facultad de Estudios Superiores Acatlán. "
+          : "Website managed by: FES Acatlán."
+      }
+      <a href="https://www.acatlan.unam.mx/">Contacto</a>
+    </p>
+  </aside>
+</footer>
