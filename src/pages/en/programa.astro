@@ -1,9 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../layouts/Header.astro";
-import Claro from "../../components/astro/botones/Claro.astro";
+import ActEn from "../../components/astro/programa/ActEn.astro";
+import Tittle from "../../components/astro/text/Tittle.astro";
 
-const title = "Registro";
+const title = "Program";
+
+const Eje1 = "Gender, Inclusion, and Marginalized Groups";
+const Eje2 = "Migration: Violence and Criminalization";
+const Eje3 = "IA & TE";
+const Eje4 = "Life Skills";
+const Eje5 = "Sustainability";
 ---
 
 <BaseLayout title={title}>
@@ -24,18 +31,10 @@ const title = "Registro";
     >
       <hr class="w-1/2 border-oro border-2" />
     </div>
-    <div
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-delay="400"
-      class="flex gap-4 w-full justify-center pt-4"
-    >
-      <Claro texto="Descargar programa" href="#" />
-    </div>
   </Header>
   <section class="my-16 px-4">
     <nav
-      class="tabs space-x-1 overflow-x-auto"
+      class="tabs space-x-1 overflow-x-auto shadow-xl"
       aria-label="Tabs"
       role="tablist"
       aria-orientation="horizontal"
@@ -49,7 +48,7 @@ const title = "Registro";
         role="tab"
         aria-selected="false"
       >
-        Monday 27
+        Monday 23
       </button>
       <button
         type="button"
@@ -60,7 +59,7 @@ const title = "Registro";
         role="tab"
         aria-selected="false"
       >
-        Tuesday 28
+        Tuesday 24
       </button>
       <button
         type="button"
@@ -71,7 +70,7 @@ const title = "Registro";
         role="tab"
         aria-selected="false"
       >
-        Wednesday 29
+        Wednesday 25
       </button>
       <button
         type="button"
@@ -82,94 +81,64 @@ const title = "Registro";
         role="tab"
         aria-selected="false"
       >
-        Thursday 30
+        Thursday 26
       </button>
     </nav>
 
-    <div class="mt-16">
+    <div class="pt-16">
       <div id="tabs-fill-1" role="tabpanel" aria-labelledby="tabs-fill-item-1">
-        <div class="grid grid-cols-2 px-64">
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="col-span-2 border border-slate-200 p-4"
-          >
-            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
-              10:00 Hrs
-            </p>
-            <p class="text-2xl tex-slate-500 font-bold py-2">
-              Congreso inauguration
-            </p>
-            <div class="border-l-4 border-oro pl-4">
-              <p class="flex items-center gap-1">
-                <span class="icon-[ic--baseline-place] size-5 text-slate-500"
-                ></span> Main plaza
-              </p>
-            </div>
+        <div class="grid grid-cols-2 px-4 md:px-16 xl:px-64">
+          <!-- Lunes -->
+          <ActEn titulo="Registration" horario="9:00-9:15" />
+          <ActEn titulo="Inauguration" horario="09:15-09:30" />
+          <ActEn
+            tag={Eje1}
+            titulo="Keynote Lecture A (AM)"
+            horario="10:00-11:00"
+          />
+          <ActEn
+            tag={Eje1}
+            titulo="Conference A"
+            horario="11:00-11:30"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje1}
+            titulo="Conference B"
+            horario="11:30-12:00"
+            presentadores="TBD"
+          />
+          <ActEn titulo="Coffee" horario="12:00-12:15" />
+          <ActEn tag="POSTERS" titulo="POSTERS" horario="12:15-13:30" />
+          <ActEn tag="Workshop" titulo="Workshop" horario="13:30-15:00" />
+          <ActEn titulo="Break/Lunch" horario="15:00-17:00" />
+          <ActEn
+            tag={Eje1}
+            titulo="Keynote Lecture A (PM)"
+            horario="17:00-18:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag="Parallel talk"
+            titulo="Parallel talk"
+            horario="18:00-18:30"
+          />
+          <ActEn titulo="POSTERS-AWARDS" horario="18:30-18:45" ultimo={true} />
+
+          <div class="py-16">
+            <Tittle
+              title="Parallel talks: 18:00-18:30 h"
+              subtitle=""
+              color="oro"
+            />
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="col-span-2 border border-slate-200 p-2"
-          >
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="col-span-2 border border-slate-200 p-4"
-          >
-            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
-              10:00 - 13:00 Hrs
-            </p>
-            <p class="text-2xl tex-slate-500 font-bold py-2">
-              Theme: SNII and indigenous peoples
-            </p>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="col-span-2 border border-slate-200 p-2"
-          >
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="border border-slate-200 p-4"
-          >
-            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
-              10:15 - 13:00 Hrs
-            </p>
-            <p class="text-2xl tex-slate-500 font-bold py-2">
-              "Magistral Conference SNII emeritus Unit of Congresses"
-            </p>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="border border-slate-200 p-4"
-          >
-            <p class="w-fit bg-azul text-white text-sm font-bold px-4 py-1">
-              11:00 - 13:00 Hrs
-            </p>
-            <p class="text-2xl tex-slate-500 font-bold py-2">
-              "Electronic literature of Latin America: fields of construction
-              and methodological approximations" <span class="text-oro">
-                - In Person</span
-              >
-            </p>
-            <div class="divider pt-2 pb-4"></div>
-            <div class="border-l-4 border-oro pl-4">
-              <p class="font-bold flex items-center gap-1">
-                <span
-                  class="icon-[material-symbols--person] size-5 text-slate-500"
-                ></span> Dra. Nohelia Meza, Dr. Rodolfo Mata Sandoval
-              </p>
-              <p class="flex items-center gap-1">
-                <span class="icon-[ic--baseline-place] size-5 text-slate-500"
-                ></span> Videoconference Room
-              </p>
-            </div>
-          </div>
+
+          <ActEn titulo="Parallel talk (ROOM A)" />
+          <ActEn titulo="Parallel talk (ROOM B)" />
+          <ActEn titulo="Parallel talk (ROOM C)" />
+          <ActEn titulo="Parallel talk (ROOM D)" ultimo={true} />
+
+          <!-- Lunes -->
         </div>
       </div>
       <div
@@ -178,6 +147,59 @@ const title = "Registro";
         role="tabpanel"
         aria-labelledby="tabs-fill-item-2"
       >
+        <div class="grid grid-cols-2 px-4 md:px-16 xl:px-64">
+          <!-- Martes -->
+
+          <ActEn
+            tag={Eje2}
+            titulo="Keynote Lecture B (AM)"
+            horario="10:00-11:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje2}
+            titulo="Conference A"
+            horario="11:00-11:30"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje2}
+            titulo="Conference B"
+            horario="11:30-12:00"
+            presentadores="TBD"
+          />
+          <ActEn titulo="Coffee" horario="12:00-12:15" />
+          <ActEn tag="POSTERS" titulo="POSTERS" horario="12:15-13:30" />
+          <ActEn tag="Workshop" titulo="Workshop" horario="13:30-15:00" />
+          <ActEn titulo="Break/Lunch" horario="15:00-17:00" />
+          <ActEn
+            tag={Eje2}
+            titulo="Keynote Lecture B (PM)"
+            horario="17:00-18:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag="Parallel talk"
+            titulo="Parallel talk"
+            horario="18:00-18:30"
+          />
+          <ActEn titulo="POSTERS-AWARDS" horario="18:30-18:45" ultimo={true} />
+
+          <div class="py-16">
+            <Tittle
+              title="Parallel talks: 18:00-18:30 h"
+              subtitle=""
+              color="oro"
+            />
+          </div>
+
+          <ActEn titulo="Parallel talk (ROOM A)" />
+          <ActEn titulo="Parallel talk (ROOM B)" />
+          <ActEn titulo="Parallel talk (ROOM C)" />
+          <ActEn titulo="Parallel talk (ROOM D)" ultimo={true} />
+
+          <!-- Martes -->
+        </div>
       </div>
       <div
         id="tabs-fill-3"
@@ -185,6 +207,59 @@ const title = "Registro";
         role="tabpanel"
         aria-labelledby="tabs-fill-item-3"
       >
+        <div class="grid grid-cols-2 px-4 md:px-16 xl:px-64">
+          <!-- Miércoles -->
+
+          <ActEn
+            tag={Eje3}
+            titulo="Keynote Lecture C (AM)"
+            horario="10:00-11:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje3}
+            titulo="Conference A"
+            horario="11:00-11:30"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje3}
+            titulo="Conference B"
+            horario="11:30-12:00"
+            presentadores="TBD"
+          />
+          <ActEn titulo="Coffee" horario="12:00-12:15" />
+          <ActEn tag="POSTERS" titulo="POSTERS" horario="12:15-13:30" />
+          <ActEn tag="Workshop" titulo="Workshop" horario="13:30-15:00" />
+          <ActEn titulo="Break/Lunch" horario="15:00-17:00" />
+          <ActEn
+            tag={Eje4}
+            titulo="Keynote Lecture C (PM)"
+            horario="17:00-18:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag="Parallel talk"
+            titulo="Parallel talk"
+            horario="18:00-18:30"
+          />
+          <ActEn titulo="POSTERS-AWARDS" horario="18:30-18:45" ultimo={true} />
+
+          <div class="py-16">
+            <Tittle
+              title="Parallel talks: 18:00-18:30 h"
+              subtitle=""
+              color="oro"
+            />
+          </div>
+
+          <ActEn titulo="Parallel talk (ROOM A)" />
+          <ActEn titulo="Parallel talk (ROOM B)" />
+          <ActEn titulo="Parallel talk (ROOM C)" />
+          <ActEn titulo="Parallel talk (ROOM D)" ultimo={true} />
+
+          <!-- Miércoles -->
+        </div>
       </div>
       <div
         id="tabs-fill-4"
@@ -192,6 +267,67 @@ const title = "Registro";
         role="tabpanel"
         aria-labelledby="tabs-fill-item-4"
       >
+        <div class="grid grid-cols-2 px-4 md:px-16 xl:px-64">
+          <!-- Jueves -->
+
+          <ActEn
+            tag={Eje5}
+            titulo="Keynote Lecture D (AM)"
+            horario="10:00-11:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje5}
+            titulo="Conference A"
+            horario="11:00-11:30"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag={Eje5}
+            titulo="Conference B"
+            horario="11:30-12:00"
+            presentadores="TBD"
+          />
+          <ActEn titulo="Coffee" horario="12:00-12:15" />
+          <ActEn tag="POSTERS" titulo="POSTERS" horario="12:15-13:30" />
+          <ActEn
+            tag="Workshop"
+            titulo="Análisis del Agua potable en tu hogar"
+            horario="13:30-15:00"
+          />
+          <ActEn titulo="Break/Lunch" horario="15:00-17:00" />
+          <ActEn
+            tag={Eje5}
+            titulo="Keynote Lecture D (PM)"
+            horario="17:00-18:00"
+            presentadores="TBD"
+          />
+          <ActEn
+            tag="Parallel talk"
+            titulo="Parallel talk"
+            horario="18:00-18:30"
+          />
+          <ActEn
+            titulo="POSTERS-AWARDS/Closing"
+            horario="18:30-18:45"
+            ultimo={true}
+          />
+
+          <div class="py-16">
+            <Tittle
+              title="Parallel talks: 18:00-18:30 h"
+              subtitle=""
+              color="oro"
+            />
+          </div>
+
+          <ActEn titulo="Parallel talk (ROOM A)" />
+          <ActEn titulo="Parallel talk (ROOM B)" />
+          <ActEn titulo="Parallel talk (ROOM C)" />
+          <ActEn titulo="Parallel talk (ROOM D)" ultimo={true} />
+
+          <!-- Jueves -->
+        </div>
       </div>
     </div>
   </section>

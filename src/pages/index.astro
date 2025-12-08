@@ -1,17 +1,21 @@
 ---
+// Layouts
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Claro from "../components/astro/botones/Claro.astro";
-import Opaco from "../components/astro/botones/Opaco.astro";
-import BandaLogos from "../components/react/BandaLogos.jsx";
 import CajaContenido from "../layouts/CajaContenido.astro";
-import Countdown from "../components/astro/Countdown.astro";
 import Header from "../layouts/Header.astro";
 
+// Components
+import Opaco from "../components/astro/botones/Opaco.astro";
+import BandaLogos from "../components/react/BandaLogos.jsx";
+import Countdown from "../components/astro/Countdown.astro";
+import Tittle from "../components/astro/text/Tittle.astro";
+
+// Variables
 const title = "Inicio";
 ---
 
 <BaseLayout title={title}>
-  <Header color="eff6ff" height="100vh">
+  <Header color="eff6ff">
     <Countdown lang={"es"} />
     <h1
       data-aos="fade-up"
@@ -34,16 +38,39 @@ const title = "Inicio";
       data-aos-delay="400"
       class="flex gap-4 w-full justify-center pt-12"
     >
-      <Claro texto="Convocatoria" href="#" />
-      <Opaco texto="Pre - Registro" href="#" />
+      <Opaco
+        texto="Pre - Registro"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScI96v9oFpvtpZ40A5JFKPQNZLy87ChD5PcnfFizvCnRM4Dzg/viewform?usp=header"
+      />
     </div>
   </Header>
   <div data-aos="fade-up" data-aos-duration="1000">
     <BandaLogos client:load />
   </div>
 
+  <div class="bg-slate-100/60 py-12">
+    <CajaContenido>
+      <Tittle
+        title="Objetivo"
+        subtitle="El objetivo de la CII-PUMA:"
+        color="oro"
+      />
+
+      <div>
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-lg py-4">
+          Crear un espacio diverso y significativo para compartir ideas,
+          experiencias y saberes en torno a los grandes desafíos de nuestro
+          tiempo, fomentando el pensamiento crítico, el diálogo
+          multidisciplinario y la construcción colectiva de propuestas que
+          conecten la academia con la vida social, cultural y ambiental.
+        </p>
+      </div>
+    </CajaContenido>
+  </div>
   <CajaContenido>
-    <div class="grid grid-cols-2 items-center py-20">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 items-center py-20"
+    >
       <div>
         <p
           data-aos="fade-up"
@@ -75,6 +102,154 @@ const title = "Inicio";
           estratégicos que invitan al diálogo y la acción.
         </p>
         <br />
+        <div
+          class="accordion accordion-shadow *:accordion-item-active:shadow-md"
+        >
+          <div class="accordion-item active" id="payment-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="payment-shadow-collapse"
+              aria-expanded="true"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Conferencia Magistral
+            </button>
+            <div
+              id="payment-shadow-collapse"
+              class="accordion-content w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="payment-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Tiempo: 60 minutos. Sugerencia: 50 minutos para la charla y 10
+                  minutos de preguntas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="delivery-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="delivery-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Conferencia
+            </button>
+            <div
+              id="delivery-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="delivery-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Tiempo: 25 minutos. Sugerencia: 20 minutos para la charla y 5
+                  minutos para las preguntas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Taller
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Tiempo: cada sesión es de 90 minutos y combina teoría y
+                  práctica.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Póster
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Póster/cartel es una sesión de 90 minutos en la que el ponente
+                  expone el tema con los asistentes que llegan a su estación. La
+                  medida del póster es de 91.4 cm × 121.9 cm. Cada ponente debe
+                  traer su póster impreso. El comité organizador asignará el
+                  espacio y el panel para colocar su póster.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Charla paralela
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  25 minutos en total. Sugerencia: 20 minutos para la charla y 5
+                  para preguntas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
         <p data-aos="fade-up" data-aos-duration="1000">
           Con este evento, la FES Acatlán busca conectar el pensamiento
           académico con las necesidades reales de nuestra sociedad, impulsando
@@ -90,7 +265,7 @@ const title = "Inicio";
 
   <div class="bg-white">
     <CajaContenido
-      ><div class="pt-14">
+      ><div>
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -126,13 +301,13 @@ const title = "Inicio";
       data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 9000, "isInfiniteLoop": true }'
       class="relative w-full pb-20"
     >
-      <div class="carousel h-120">
+      <div class="carousel h-180 md:h-120">
         <div class="carousel-body opacity-0 h-full">
           <!-- Slide del eje IA y TE -->
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:px-32 xl:px-64"
               >
                 <span class="icon-[mingcute--ai-fill] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
@@ -158,7 +333,7 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[streamline--gender-equality] size-35 bg-oro"
                 ></span>
@@ -184,7 +359,7 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--world] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
@@ -209,7 +384,7 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--idea] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
@@ -235,7 +410,7 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--seed] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
@@ -285,4 +460,84 @@ const title = "Inicio";
       </button>
     </div>
   </div>
+
+  <CajaContenido>
+    <Tittle
+      title="¿Dónde está ubicada la FES Acatlán?"
+      subtitle=""
+      color="oro"
+    />
+    <br />
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240539.41298096513!2d-99.31119848169715!3d19.608977569652023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2030fe65d6abb%3A0xa7925e1d1a8c7a5d!2sCEMM%20-%20UNAM%20Centro%20de%20Estudios%20Municipales%20y%20Metropolitanos!5e0!3m2!1ses-419!2smx!4v1740712357164!5m2!1ses-419!2smx"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full px-0 sm:px-4"
+        >
+        </iframe>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <br />
+        <h1 class="text-xl text-left font-bold">La facultad está ubicada en</h1>
+        <div class="pl-10 py-4">
+          <p>Naucalpan de Juárez, Estado de México.</p>
+          <p>En la avenida Jardines de San Mateo s/n.</p>
+          <p>En la zona de Santa Cruz Acatlán</p>
+        </div>
+        <p>
+          <b>Ubicación:</b> Por favor, revise la ubicación y asegúrese de que lo
+          guíe a la Unidad de Investigación Multidisciplinaria de la FES Acatlán.
+        </p>
+        <p>
+          GMaps: <a
+            class="text-azul font-bold"
+            href="https://maps.app.goo.gl/bzRwhZ2U4LZfNWdFA"
+            target="_blank">https://maps.app.goo.gl/bzRwhZ2U4LZfNWdFA</a
+          >
+        </p>
+
+        <br />
+        <h1 class="text-xl text-left font-bold">
+          ¿Cómo llegar a la FES Acatlán?
+        </h1>
+        <ol class="list-decimal pl-10">
+          <li>
+            <p>Desde el metro cuatro caminos:</p>
+            <ol class="list-[lower-alpha] pl-10">
+              <li>
+                Tomar un bus en la salida J de camiones. Tiempo estimado 30
+                minutos.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>Desde el aeropuerto de la Ciudad de México, Terminal 1</p>
+            <ol class="list-[lower-alpha] pl-10">
+              <li>
+                Uber o taxi son buenas opciones. Tiempo estimado: 60 minutos.
+              </li>
+              <li>
+                Tomar el metro. Tiempo estimado 60 minutos, llegar hasta el
+                metro cuatro caminos, seguir paso 1.
+              </li>
+            </ol>
+          </li>
+          <li>
+            Desde la terminal de autobuses de Tlalnepantla. Tiempo estimado: 45
+            minutos.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br /><br />
+  </CajaContenido>
 </BaseLayout>

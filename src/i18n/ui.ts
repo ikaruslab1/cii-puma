@@ -10,16 +10,16 @@ export const defaultLang = 'es';
 export const ui = {
   es: {
     'nav.home': 'Inicio',
-    'nav.register': 'Registro',
+    'nav.register': 'Pre-Registro / Memorias',
     'nav.program': 'Programa',
     'nav.comite': 'Comite',
     'nav.language': 'Español', 
   },
   en: {
     'nav.home': 'Home',
-    'nav.register': 'Register',
+    'nav.register': 'Pre-Registration / Memories',
     'nav.program': 'Program',
-    'nav.comite': 'Comite',
+    'nav.comite': 'Committee',
     'nav.language': 'English',
   },
 } as const;

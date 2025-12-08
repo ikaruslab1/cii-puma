@@ -1,0 +1,76 @@
+---
+const { horario, titulo, lugar, presentadores, tag, ultimo } = Astro.props;
+---
+
+<div
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  class="border border-slate-200 p-4 col-span-2 hover:bg-slate-100/60 transition duration-500"
+>
+  <p
+    class={tag === "Evento general"
+      ? "w-fit bg-gray-200 text-sm font-bold px-4 py-1"
+      : tag === "Género, Inclusion & Grupos Marginados"
+        ? "w-fit bg-violet-200 text-sm font-bold px-4 py-1"
+        : tag === "Migración: Violencia & Criminalización"
+          ? "w-fit bg-teal-100 text-sm font-bold px-4 py-1"
+          : tag === "IA & TE"
+            ? "w-fit bg-blue-200 text-sm font-bold px-4 py-1"
+            : tag === "Habilidades para la vida"
+              ? "w-fit bg-amber-100 text-sm font-bold px-4 py-1"
+              : tag === "Sustentabilidad"
+                ? "w-fit bg-green-200 text-sm font-bold px-4 py-1"
+                : tag === "POSTERS"
+                  ? "w-fit bg-white border-1 border-slate-300 text-sm font-bold px-4 py-1"
+                  : tag === "Taller"
+                    ? "w-fit bg-slate-200 text-sm font-bold px-4 py-1"
+                    : tag === "Receso/Comida"
+                      ? "w-fit bg-pink-200 text-sm font-bold px-4 py-1"
+                      : tag === "Charlas Paralelas"
+                        ? "w-fit bg-orange-200 text-sm font-bold px-4 py-1"
+                        : ""}
+  >
+    {tag}
+  </p>
+  <p class="text-2xl tex-slate-500 font-bold py-2">
+    {titulo}
+    <span class="text-oro"></span>
+  </p>
+  <div class="divider pt-2 pb-4"></div>
+  <div class="border-l-4 border-oro pl-4 text-lg">
+    {
+      presentadores ? (
+        <p class="flex items-center gap-1">
+          <span class="icon-[material-symbols--person] size-5 text-slate-500" />
+          {presentadores}
+        </p>
+      ) : null
+    }
+    {
+      lugar ? (
+        <p class="flex items-center gap-1">
+          <span class="icon-[ic--baseline-place] size-5 text-slate-500" />
+          {lugar}
+        </p>
+      ) : null
+    }
+    {
+      horario ? (
+        <p class="font-bold flex items-center gap-1">
+          <span class="icon-[mdi--clock] size-5 text-slate-500" />
+          {horario} hrs
+        </p>
+      ) : null
+    }
+  </div>
+</div>
+
+{
+  ultimo === true ? null : (
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      class="col-span-2 border border-slate-200 p-2"
+    />
+  )
+}

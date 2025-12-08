@@ -1,9 +1,104 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
-const title = "Registro";
+import CajaContenido from "../../layouts/CajaContenido.astro";
+import Header from "../../layouts/Header.astro";
+import Tittle from "../../components/astro/text/Tittle.astro";
+const title = "Registration";
 ---
 
 <BaseLayout title={title}>
-  <p class="py-64">Register (En)</p>
+  <Header color="f6f6f6" height="75vh">
+    <h1
+      class="text-center font-bold uppercase text-azul text-6xl md:text-7xl lg:text-9xl pb-6"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      Registration
+    </h1>
+    <div
+      class="flex justify-center pb-4"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      <hr class="w-1/2 border-oro border-2" />
+    </div>
+  </Header>
+  <CajaContenido>
+    <Tittle title="About your contributions" subtitle="" color="oro" />
+    <br />
+    <ul class="list-disc pl-16">
+      <li>
+        <p data-aos="fade-up" data-aos-duration="1000">
+          All submissions will undergo peer review.
+        </p>
+      </li>
+    </ul>
+    <br />
+    <p data-aos="fade-up" data-aos-duration="1000">
+      This template may be used for either of the following submission types:
+    </p>
+    <ul class="list-disc pl-16">
+      <li>
+        <p data-aos="fade-up" data-aos-duration="1000">
+          <b class="text-azul">Extended Abstract / Poster Paper</b> (maximum 3 pages):
+          Presents early-stage research, focused on methodology without final results.
+        </p>
+      </li>
+      <li>
+        <p data-aos="fade-up" data-aos-duration="1000">
+          <b class="text-azul">Full / Regular Research Paper</b> (maximum 8 pages):
+          Reports original findings with sufficient support and clarity. These contributions
+          should be near journal-quality and ready for future publication.
+        </p>
+      </li>
+    </ul>
+    <br />
+    <div
+      class="flex items-center justify-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <a
+        href="https://docs.google.com/document/d/12JaiOhMr-Bbf4XYWOSv4QtamQsm6wXaZ/edit?usp=sharing&ouid=116650779552466513078&rtpof=true&sd=true"
+        target="_blank"
+        class="text-2xl font-bold text-white py-2 px-4 border-2 border-azul rounded bg-azul hover:bg-azul/20 hover:text-azul transition duration-500"
+        >Download format</a
+      >
+    </div>
+    <br />
+    <p class="font-bold text-azul" data-aos="fade-up" data-aos-duration="1000">
+      Publication:
+    </p>
+    <p data-aos="fade-up" data-aos-duration="1000">
+      Conference proceedings will be published shortly after the event. UNAM
+      will send each author a unique upload link by approximately April 30,
+      2026. Authors will have two weeks to submit the final version. Timely
+      reminders will be sent by the organizers.
+    </p>
+  </CajaContenido>
+  <br /><br />
+  <CajaContenido>
+    <Tittle title="About your contributions" subtitle="" color="oro" />
+    <br />
+    <p data-aos="fade-up" data-aos-duration="1000">
+      The correspondence author must sign the publication agreement, download it
+      using the following link:
+    </p>
+    <br />
+    <div
+      class="flex items-center justify-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <a
+        href="https://docs.google.com/document/d/1OIn_dtVao6EA5KGAvRk1Xw1Al8dwMOey/edit?usp=sharing&ouid=116650779552466513078&rtpof=true&sd=true"
+        target="_blank"
+        class="text-2xl font-bold text-white py-2 px-4 border-2 border-azul rounded bg-azul hover:bg-azul/20 hover:text-azul transition duration-500"
+        >Download format</a
+      >
+    </div>
+    <br /><br />
+  </CajaContenido>
 </BaseLayout>

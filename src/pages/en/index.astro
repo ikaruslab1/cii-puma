@@ -1,65 +1,75 @@
 ---
-import PixelBlast from "../../components/react/PixelBlast.jsx";
+// Layouts
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Claro from "../../components/astro/botones/Claro.astro";
+import CajaContenido from "../../layouts/CajaContenido.astro";
+import Header from "../../layouts/Header.astro";
+
+// Components
 import Opaco from "../../components/astro/botones/Opaco.astro";
 import BandaLogos from "../../components/react/BandaLogos.jsx";
-import CajaContenido from "../../layouts/CajaContenido.astro";
 import Countdown from "../../components/astro/Countdown.astro";
+import Tittle from "../../components/astro/text/Tittle.astro";
 
+// Variables
 const title = "Inicio";
 ---
 
 <BaseLayout title={title}>
-  <div class="w-full h-screen relative -mt-10">
-    <PixelBlast
-      variant="square"
-      pixelSize={6}
-      color="#eff6ff"
-      patternScale={3}
-      patternDensity={1}
-      pixelSizeJitter={0}
-      speed={0.8}
-      edgeFade={0.25}
-      transparent
-      client:load
-    />
-    <div
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto w-[99vw] px-4 md:px-32 xl:px-64"
+  <Header color="eff6ff">
+    <Countdown lang={"en"} />
+    <h1
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      class="text-center text-xl md:text-3xl xl:text-4xl font-bold text-white bg-azul py-4"
     >
-      <Countdown lang={"en"} />
-      <h1
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        class="text-center text-xl md:text-3xl xl:text-4xl font-bold text-white bg-azul py-4"
-      >
-        1<sup>st</sup> International Research Congress:
-      </h1>
-      <h3
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="300"
-        class="text-center text-3xl md:text-5xl xl:text-7xl font-bold text-balance text-azul drop-shadow-lg drop-shadow-white"
-      >
-        University Perspectives from Multidisciplinarity and Application
-      </h3>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="400"
-        class="flex gap-4 w-full justify-center pt-12"
-      >
-        <Claro texto="Call for Papers" href="#" />
-        <Opaco texto="Pre - Registration" href="#" />
-      </div>
+      1<sup>st</sup> International Research Congress:
+    </h1>
+    <h3
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+      class="text-center text-3xl md:text-5xl xl:text-7xl font-bold text-balance text-azul drop-shadow-lg drop-shadow-white"
+    >
+      University Perspectives through Multidisciplinarity and Application
+    </h3>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="400"
+      class="flex gap-4 w-full justify-center pt-12"
+    >
+      <Opaco
+        texto="Pre - Registration"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScI96v9oFpvtpZ40A5JFKPQNZLy87ChD5PcnfFizvCnRM4Dzg/viewform?usp=header"
+      />
     </div>
-  </div>
+  </Header>
   <div data-aos="fade-up" data-aos-duration="1000">
     <BandaLogos client:load />
   </div>
 
+  <div class="bg-slate-100/60 py-12">
+    <CajaContenido>
+      <Tittle
+        title="Objective"
+        subtitle="The goal of CII-PUMA is"
+        color="oro"
+      />
+
+      <div>
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-lg py-4">
+          Create a diverse and meaningful space to share ideas, experiences, and
+          knowledge around the great challenges of our time, promoting critical
+          thinking, multidisciplinary dialogue, and collective proposals that
+          connect academia with social, cultural, and environmental life.
+        </p>
+      </div>
+    </CajaContenido>
+  </div>
   <CajaContenido>
-    <div class="grid grid-cols-2 items-center py-20">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 items-center py-20"
+    >
       <div>
         <p
           data-aos="fade-up"
@@ -78,23 +88,165 @@ const title = "Inicio";
       </div>
       <div>
         <p data-aos="fade-up" data-aos-duration="1000">
-          The Faculty of Higher Studies Acatlán (FES Acatlán) is pleased to
-          present the <strong>CII-PUMA</strong>, a welcoming space that comes to
-          life to share ideas, listen to one another, and build bridges between
-          diverse voices. For four special days, we will meet with people
-          committed to knowledge, teaching, research, and change: leaders,
-          professors, students, and representatives from various sectors. It
-          will be a time to imagine together responses to the challenges of our
-          time, from a critical, generous, and proactive perspective. With a
-          multidisciplinary and inclusive approach, this gathering will be
-          organized around five strategic axes that encourage dialogue and
-          action.
+          As part of the Faculty's 50th anniversary, <b>CII-PUMA</b> emerges as a
+          welcoming space for sharing ideas, listening, and building bridges between
+          different voices. Over the course of one week, we will bring together individuals
+          committed to knowledge, teaching, research, and social change — leaders,
+          professors, students, and representatives from diverse sectors. It will
+          be an opportunity to envision responses to today's challenges through critical,
+          generous, and creative perspectives. The conference will be organized around
+          five strategic themes that invite reflection and collaboration:
         </p>
         <br />
+        <div
+          class="accordion accordion-shadow *:accordion-item-active:shadow-md"
+        >
+          <div class="accordion-item active" id="payment-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="payment-shadow-collapse"
+              aria-expanded="true"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Keynote Lecture
+            </button>
+            <div
+              id="payment-shadow-collapse"
+              class="accordion-content w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="payment-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  60 minutes total. Suggestion: 50 for the talk and 10 for
+                  questions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="delivery-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="delivery-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Conference
+            </button>
+            <div
+              id="delivery-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="delivery-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  25 minutes total. Suggestion: 20 for the talk and 5 for
+                  questions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Workshop
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Four 90-minute sessions, combining theory and practice.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Poster
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  Posters should measure 91.4 cm × 121.9 cm. The organizing team
+                  will provide space for display and discussion. Each
+                  participant must bring their poster.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" id="cancel̉-shadow">
+            <button
+              class="accordion-toggle inline-flex items-center gap-x-4 px-5 py-4 text-start"
+              aria-controls="cancel̉-shadow-collapse"
+              aria-expanded="false"
+            >
+              <span
+                class="icon-[tabler--plus] accordion-item-active:hidden text-base-content size-4.5 block shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--minus] accordion-item-active:block text-base-content size-4.5 hidden shrink-0"
+              ></span>
+              Parallel talk
+            </button>
+            <div
+              id="cancel̉-shadow-collapse"
+              class="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+              aria-labelledby="cancel̉-shadow"
+              role="region"
+            >
+              <div class="px-5 pb-4">
+                <p class="text-base-content/80 font-normal">
+                  25 minutes total. Suggestion: 20 for the talk and 5 for
+                  questions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
         <p data-aos="fade-up" data-aos-duration="1000">
-          With this event, FES Acatlán seeks to connect academic thought with
-          the real needs of our society, promoting solutions from the university
-          community to the world.
+          Through this event, FES Acatlán aims to connect academic thought with
+          real societal needs, promoting solutions that emerge from the
+          university community and extend to the wider world.
         </p>
       </div>
     </div>
@@ -106,13 +258,13 @@ const title = "Inicio";
 
   <div class="bg-white">
     <CajaContenido
-      ><div class="pt-14">
+      ><div>
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
           class="border-l-5 border-oro pl-4"
         >
-          <h3 class="text-5xl font-bold">DESIGNING TOMORROW</h3>
+          <h3 class="text-5xl font-bold">DESIGNING THE FUTURE</h3>
           <p class="text-2xl text-slate-600">
             Technology, Justice and Sustainability
           </p>
@@ -120,20 +272,17 @@ const title = "Inicio";
         <br />
         <br />
         <p data-aos="fade-up" data-aos-duration="1000" class="text-lg">
-          During this dynamic and meaningful day, we will share inspiring talks
-          and parallel sessions with experts in each of the thematic areas. We
-          will also have spaces designed to open conversations, explore recent
-          ideas, and engage in open and collaborative dialogue. This meeting
-          will be an excellent opportunity to forge real connections among those
-          from academia, public institutions, the productive sector, and civil
-          society.
+          Throughout this dynamic and meaningful event, participants will engage
+          in inspiring talks and parallel sessions led by experts in their
+          respective thematic areas. There will also be spaces designed for open
+          dialogue, exploration of recent research, and collaboration among
+          academics, public institutions, industry, and civil society.
         </p>
         <br />
         <p data-aos="fade-up" data-aos-duration="1000" class="text-lg">
-          The themes guiding this conference touch on problems that we already
-          experience in our daily lives, and invite us to imagine, from
-          different perspectives, how to build a fairer, more livable and more
-          supportive future for everyone.
+          The selected topics address everyday global challenges and encourage
+          us to imagine a fairer, more sustainable, and more inclusive future
+          for all.
         </p>
       </div></CajaContenido
     >
@@ -142,13 +291,13 @@ const title = "Inicio";
       data-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true, "speed": 9000, "isInfiniteLoop": true }'
       class="relative w-full pb-20"
     >
-      <div class="carousel h-120">
+      <div class="carousel h-180 md:h-120">
         <div class="carousel-body opacity-0 h-full">
           <!-- Slide del eje IA y TE -->
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:px-32 xl:px-64"
               >
                 <span class="icon-[mingcute--ai-fill] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
@@ -156,14 +305,16 @@ const title = "Inicio";
                 </h4><br />
                 <p class="text-lg text-balance">
                   Artificial intelligence and other emerging technologies are
-                  already changing our daily lives: the way we learn and work,
-                  even how decisions are made in healthcare, justice, and many
-                  other key areas are constantly evolving. This theme invites us
-                  to explore the enormous potential of AI and ET to improve
-                  processes and solve complex problems, as well as the ethical
-                  and social dilemmas that arise when algorithms begin to
-                  influence human decisions. We will reflect on how to leverage
-                  these tools responsibly, creatively, and with a human touch.
+                  already transforming our daily lives, from the way we learn
+                  and work to how decisions are made in fields such as
+                  healthcare, justice, and many other key areas that are
+                  constantly evolving. This thematic topic invites us to explore
+                  the vast potential of AI and ET to improve processes and solve
+                  complex problems, while also addressing the ethical and social
+                  dilemmas that arise as algorithms begin to influence human
+                  decision-making. Together, we will reflect on how to harness
+                  these tools responsibly, creatively, and with a human-centered
+                  approach.
                 </p>
               </div>
             </div>
@@ -172,24 +323,24 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[streamline--gender-equality] size-35 bg-oro"
                 ></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
-                  Género, inclusión y grupos marginados
+                  Gender, Inclusion, and Marginalized Groups
                 </h4><br />
                 <p class="text-lg text-balance">
-                  Construir una sociedad más equitativa empieza por reconocer
-                  que todas las personas han tenido oportunidades diferentes y
-                  su entorno ha sido diferente. Este eje nos invita a
-                  reflexionar sobre cómo derribar las barreras estructurales que
-                  han limitado la participación plena de mujeres, pueblos
-                  originarios y otros grupos históricamente excluidos, en
-                  ámbitos como la ciencia, la tecnología, la educación y la
-                  política. Hablaremos de inclusión como un gesto simbólico y
-                  como una transformación profunda para que todas las voces sean
-                  escuchadas, respetadas y valoradas por igual.
+                  Building a more equitable society begins with recognizing that
+                  people have experienced different opportunities and
+                  environments. This thematic topic invites reflection on how to
+                  dismantle the structural barriers that have limited the full
+                  participation of women, Indigenous peoples, and other
+                  historically excluded groups in areas such as science,
+                  technology, education, and politics. We will discuss inclusion
+                  not only as a symbolic gesture but as a profound
+                  transformation, one that ensures all voices are heard,
+                  respected, and valued equally.
                 </p>
               </div>
             </div>
@@ -198,23 +349,22 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--world] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
-                  Migración: Violencia y Criminalización
+                  Migration: Violence and Criminalization
                 </h4><br />
                 <p class="text-lg text-balance">
-                  Detrás de cada desplazamiento migratorio hay historias de
-                  esperanza, lucha y resiliencia. Sin embargo, muchas de esas
-                  trayectorias están marcadas por la violencia, la
-                  discriminación y la criminalización de quienes migran. En este
-                  eje queremos mirar la migración como un fenómeno global y como
-                  una experiencia profundamente humana que nos concierne a
-                  todos. Hablaremos de cómo cambiar las narrativas, cómo tender
-                  puentes en lugar de muros, y cómo imaginar políticas y
-                  comunidades que acojan, protejan y reconozcan el valor de cada
-                  persona migrante.
+                  Behind every migratory journey lie stories of hope, struggle,
+                  and resilience. Yet, many of these paths are marked by
+                  violence, discrimination, and the criminalization of those who
+                  migrate. This thematic topic invites us to view migration as
+                  both a global phenomenon and a deeply human experience that
+                  concerns us all. We will reflect on how to transform
+                  prevailing narratives, build bridges instead of walls, and
+                  envision policies and communities that welcome, protect, and
+                  recognize the dignity and worth of every migrant.
                 </p>
               </div>
             </div>
@@ -223,24 +373,24 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--idea] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
-                  Habilidades para la vida: Pensar, colaborar y adaptarse en un
-                  mundo cambiante
+                  Life Skills: Thinking, Collaborating, and Adapting in a
+                  Changing World
                 </h4><br />
                 <p class="text-lg text-balance">
-                  En tiempos de cambios constantes, saber mucho ya no basta. En
-                  nuestros tiempos, habilidades como el pensamiento crítico, la
-                  comunicación efectiva, la empatía, la resiliencia y la
-                  capacidad de resolver conflictos son esenciales para navegar
-                  la vida personal, académica y profesional. Este eje centra la
-                  discusión en las llamadas habilidades blandas, aquellas que
-                  nos permiten colaborar, adaptarnos y tomar decisiones con
-                  conciencia y sensibilidad. Reconocer su valor es clave para
-                  formar personas capaces de responder a los retos del presente
-                  y de construir entornos más humanos, creativos y sostenibles.
+                  In times of constant change, knowledge alone is no longer
+                  enough. Today, skills such as critical thinking, effective
+                  communication, empathy, resilience, and conflict resolution
+                  are essential for navigating personal, academic, and
+                  professional life. This thematic axis focuses on so-called
+                  soft skills, those that enable us to collaborate, adapt, and
+                  make thoughtful, sensitive decisions. Recognizing their
+                  importance is crucial to developing individuals who can meet
+                  today’s challenges and build more human, creative, and
+                  sustainable environments.
                 </p>
               </div>
             </div>
@@ -249,29 +399,29 @@ const title = "Inicio";
           <div class="carousel-slide">
             <div class="flex h-full justify-center p-6">
               <div
-                class="flex flex-col items-center self-center text-center px-64"
+                class="flex flex-col items-center self-center text-center px-12 md:px-24 lg:32 xl:px-64"
               >
                 <span class="icon-[mdi--seed] size-35 bg-oro"></span>
                 <h4 class="font-bold text-2xl sm:text-3xl">
-                  Sustentabilidad en el siglo XXI: tecnología, cultura y el arte
-                  de cuidar el futuro
+                  Sustainability in the 21st Century: Technology, Culture, and
+                  the Art of Caring for the Future
                 </h4><br />
                 <p class="text-lg text-balance">
-                  El planeta requiere nuestra urgente atención. Este eje nos
-                  invita a repensar, desde distintas disciplinas y vivencias
-                  sobre nuestra relación e interacción con la Tierra: cómo
-                  usamos los recursos naturales, cómo producimos y consumimos, y
-                  cómo podemos vivir de manera más consciente, justa y
-                  solidaria. Abordaremos la sustentabilidad no solo desde la
-                  ecología, sino también desde la tecnología, la cultura, la
-                  gobernanza y la vida cotidiana.
+                  Our planet demands our urgent attention. This thematic axis
+                  invites us to rethink, from diverse disciplines and lived
+                  experiences, our relationship and interaction with the Earth:
+                  how we use natural resources, how we produce and consume, and
+                  how we can live more consciously, fairly, and in solidarity
+                  with one another. We will approach sustainability not only
+                  through ecology, but also through technology, culture,
+                  governance, and everyday life.
                 </p>
                 <p class="text-lg text-balance">
-                  Exploramos propuestas locales y globales para enfrentar la
-                  crisis climática y social del siglo XXI, reconociendo que
-                  construir comunidades proactivas y responsables requiere
-                  conocimiento, colaboración y un profundo compromiso con el
-                  presente y el porvenir.
+                  Together, we will explore local and global initiatives to
+                  address the climate and social crises of the 21st century,
+                  recognizing that building proactive and responsible
+                  communities requires knowledge, collaboration, and a deep
+                  commitment to both the present and the future.
                 </p>
               </div>
             </div>
@@ -299,4 +449,67 @@ const title = "Inicio";
       </button>
     </div>
   </div>
+  <CajaContenido>
+    <Tittle title="Location" subtitle="" color="oro" />
+    <br />
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240539.41298096513!2d-99.31119848169715!3d19.608977569652023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2030fe65d6abb%3A0xa7925e1d1a8c7a5d!2sCEMM%20-%20UNAM%20Centro%20de%20Estudios%20Municipales%20y%20Metropolitanos!5e0!3m2!1ses-419!2smx!4v1740712357164!5m2!1ses-419!2smx"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full px-0 sm:px-4"
+        >
+        </iframe>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <br />
+        <h1 class="text-xl text-left font-bold">
+          FES Acatlán – Naucalpan de Juárez, State of Mexico
+        </h1>
+        <div class="pl-10 py-4">
+          <p>Avenida Jardines de San Mateo s/n, Santa Cruz Acatlán area</p>
+        </div>
+        <p>
+          GMaps: <a
+            class="text-azul font-bold"
+            href="https://maps.app.goo.gl/bzRwhZ2U4LZfNWdFA"
+            target="_blank">https://maps.app.goo.gl/bzRwhZ2U4LZfNWdFA</a
+          >
+        </p>
+
+        <br />
+        <h1 class="text-xl text-left font-bold">¿How to get there?</h1>
+        <ol class="list-decimal pl-10">
+          <li>
+            <p>From Metro Cuatro Caminos:</p>
+            <ol class="list-[lower-alpha] pl-10">
+              <li>Take a bus at the terminal exit.</li>
+            </ol>
+          </li>
+          <li>
+            <p>From Mexico City International Airport (Terminal 1):</p>
+            <ol class="list-[lower-alpha] pl-10">
+              <li>Uber or taxi recommended.</li>
+              <li>
+                By Metro: Possible but may take over an hour; closest stop is
+                Cuatro Caminos.
+              </li>
+            </ol>
+          </li>
+          <li>
+            From Tlalnepantla Bus Terminal: A convenient and economical option.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <br /><br />
+  </CajaContenido>
 </BaseLayout>
