@@ -1,9 +1,55 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../layouts/Header.astro";
+import CajaContenido from "../../layouts/CajaContenido.astro";
+const title = "Committee and commissions";
 
-const title = "Comite";
+const committeeMembers = [
+  "Ing. Carlos Arce",
+  "Mtra. Natalia Montes de Oca",
+  "Dr.a Luz María Montelongo",
+  "Dr. Nemesio Orozco",
+  "Dr. Javier Orduz-Ducuara",
+  "Lic. Miguel de la Calleja",
+  "Mtro. Mario Chávez",
+  "Dr. Omar Reyes",
+];
 ---
 
 <BaseLayout title={title}>
-  <p class="py-64">Comite</p>
+  <Header color="f6f6f6" height="75vh">
+    <h1
+      class="text-center font-bold uppercase text-azul text-6xl md:text-7xl lg:text-9xl pb-6"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      {title}
+    </h1>
+    <div
+      class="flex justify-center pb-4"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="300"
+    >
+      <hr class="w-1/2 border-oro border-2" />
+    </div>
+  </Header>
+  <CajaContenido>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
+      {
+        committeeMembers.map((member) => (
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-oro group"
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            <h3 class="text-xl font-bold text-azul group-hover:text-dorado transition-colors duration-300">
+              {member}
+            </h3>
+          </div>
+        ))
+      }
+    </div>
+  </CajaContenido>
 </BaseLayout>
