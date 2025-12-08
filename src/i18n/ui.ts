@@ -12,7 +12,7 @@ export const ui = {
     'nav.home': 'Inicio',
     'nav.register': 'Pre-Registro / Memorias',
     'nav.program': 'Programa',
-    'nav.comite': 'Comite',
+    'nav.comite': 'Comité',
     'nav.language': 'Español', 
   },
   en: {
