@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../layouts/Header.astro";
 import CajaContenido from "../../layouts/CajaContenido.astro";
+import Tittle from "../../components/astro/text/Tittle.astro";
 const title = "Committee and commissions";
 
 const committeeMembers = [
@@ -53,5 +54,22 @@ const committeeMembers = [
         ))
       }
     </div>
+
+    <br />
+    <br />
+    <Tittle title="Acknowledgments" subtitle="" color="oro" />
+    <br />
+    <div
+      class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-oro group"
+      data-aos="fade-up"
+      data-aos-duration="500"
+    >
+      <h3
+        class="text-xl font-bold text-azul group-hover:text-dorado transition-colors duration-300"
+      >
+        Technological Development Center - FES Acatlán
+      </h3>
+    </div>
   </CajaContenido>
+  <br /><br />
 </BaseLayout>
